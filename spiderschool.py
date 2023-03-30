@@ -45,9 +45,9 @@ shengshi1 = [x.strip() for x in shengshi]
 print(len(shengshi1))
 print(shengshi1)
 diqu = shengshi1[::4]
-leixing = shengshi1[2::4]
-zongfen = shengshi1[3::4]
-banxuechengc = shengshi1[1::4]
+leixing = shengshi1[1::4]
+zongfen = shengshi1[2::4]
+banxuechengc = shengshi1[3::4]
 # print(diqu)
 # print(leixing)
 # print(zongfen)
