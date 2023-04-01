@@ -16,34 +16,33 @@ page = page_text.text
 soup = BeautifulSoup(html,'lxml')
 
 tree = etree.HTML(page_text.text)
-# tureaddress = tree.xpath("//div[@class='positionInfo']/a/text()")   # 详细地址
-# print(len(tureaddress))
-# print(tureaddress)
-# a = (soup.find_all('a',class_='bizcircle'))
-# b = (soup.find_all('div',class_='totalPrice'))
-# print(b)
-# regex = '<a href=.*? class="bizcircle" title=".*?">(.*?)</a>'
-# tureaddress = re.findall(regex, page)
-# regex1 = '<div class="totalPrice"><span>(.*?)</span>(.*?)<sup>2</sup></div>'
-# district = re.findall(regex1, page)
-# print(district)
-# print(len(district))
-# paiming = '<a class="name-cn" href=".*?" data-v-b80b4d60="">(.*?) </a>'
 
-paiming = tree.xpath('//div[@class="ranking"]/text()')
+
+paiming = tree.xpath('//td/div/text()')
 paiming = [x.strip() for x in paiming]
-for i in range(1,4):
-        paiming.insert(i-1,str(i))
-# paiminglist = re.findall(paiming,page)
-print(paiming)
+paiming = paiming[::2]
+# paiming = '<div class="ranking top1" data-v-3fe7d390>(.*?)</div>'
+# paiminglist = re.findall(paiming,html)
+# <td data-v-3fe7d390><div class="ranking top2" data-v-3fe7d390>               2             </div></td>
+
+
+# paiming = tree.xpath('//div[@class="ranking"]/text()')
+# paiming = [x.strip() for x in paiming]
+# for i in range(1,4):
+#         paiming.insert(i-1,str(i))
+
+
+
+
+print('排名',paiming)
 # print(paiming)
 xuexiaomc = tree.xpath('//a[@class="name-cn"]/text()')
 print((xuexiaomc))
 shengshi = tree.xpath('//td[@data-v-3fe7d390=""]/text()')
 
 shengshi1 = [x.strip() for x in shengshi]
-print(len(shengshi1))
-print(shengshi1)
+# print(len(shengshi1))
+# print(shengshi1)
 diqu = shengshi1[::4]
 leixing = shengshi1[1::4]
 zongfen = shengshi1[2::4]
