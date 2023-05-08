@@ -1,6 +1,5 @@
 import pymysql
 from sqlalchemy import create_engine
-import sqlalchemy
 import pandas as pd
 db = pymysql.connect(
       host='127.0.0.1',
