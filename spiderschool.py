@@ -35,7 +35,7 @@ def csv_return(paiming,xuexiaomc, diqu, leixing,zongfen,banxuechengc):
     Data = pd.DataFrame(
             { '排名':paiming,'学校名称':xuexiaomc,'地区': diqu, '类型': leixing, '总分': zongfen, '办学层次': banxuechengc})
 
-    Data.to_csv('spiderdata.csv', index=None,encoding='gbk')
+    Data.to_csv('spiderdata.csv', index=None,encoding='utf-8')
     return ("xieru")
 
 a = requestUrltext()

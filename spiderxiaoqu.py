@@ -96,8 +96,8 @@ whenbulids2 = [x[1] for x in whenbulids1]
 print(whenbulids2)
 # 小区名称、参考均价、90天成交数、当前出租数、建成年份、地址
 
-if not os.path.exists('./spiderdata.csv'):
-        os.mkdir('./spiderdata.csv')
+if not os.path.exists('./spiderdataxiaoqu.csv'):
+        os.mkdir('./spiderdataxiaoqu.csv')
 print(len(addresss))
 print(len(tureaddresss))
 print(len(commentcounts))
@@ -108,4 +108,4 @@ print(len(whenbulids2))
 Data = pd.DataFrame(
         { '小区名称': commentcounts, '小区参考均价': districts, '90天成交数': nintyresults, '当前出租数': nowhires, '所在地区': addresss,'详细地址':tureaddresss,'建成年份':whenbulids2})
 
-Data.to_csv('spiderdata.csv', index=None,encoding='gbk')
+Data.to_csv('spiderdataxiaoqu.csv', index=None,encoding='utf-8')
